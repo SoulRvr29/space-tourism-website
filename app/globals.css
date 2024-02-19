@@ -3,31 +3,40 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --background-dark: rgb(11, 13, 23);
+  --text-light-blue: rgb(208, 214, 249);
+  --text-white: rgb(255, 255, 255);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--background-dark);
+  color: var(--text-white);
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* h1 {
+  text-transform: uppercase;
+  font-size: 150px;
 }
+
+h2 {
+  text-transform: uppercase;
+  font-size: 100px;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 56px;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-size: 32px;
+}
+
+h5 {
+  text-transform: uppercase;
+  font-size: 28px;
+  letter-spacing: 4.75;
+} */

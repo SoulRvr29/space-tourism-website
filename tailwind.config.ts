@@ -8,10 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        "background-dark": "rgb(11, 13, 23)",
+        "text-light-blue": "rgb(208, 214, 249)",
+        "text-white": "rgb(255, 255, 255)",
+      },
+      fontFamily: {
+        bellefair: [`var(--font-bellefair)`],
+        barlow: [`var(--font-barlow-condensed)`],
+        barlowCondensed: [`var(--font-barlow-condensed)`],
       },
     },
   },
