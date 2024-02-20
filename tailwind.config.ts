@@ -15,7 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         bellefair: [`var(--font-bellefair)`],
-        barlow: [`var(--font-barlow-condensed)`],
+        barlow: [`var(--font-barlow)`],
         barlowCondensed: [`var(--font-barlow-condensed)`],
       },
     },

@@ -1,6 +1,10 @@
+import Image from "next/image";
+import logo from "../public/shared/logo.svg";
 import type { Metadata } from "next";
 import { Bellefair, Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
+import bkgHome from "../public/home/background-home-desktop.jpg";
+import Nav from "../components/Nav";
 
 const bellefair = Bellefair({
   subsets: ["latin"],
@@ -8,7 +12,7 @@ const bellefair = Bellefair({
   variable: "--font-bellefair",
 });
 
-const barlow = Barlow_Condensed({
+const barlow = Barlow({
   subsets: ["latin"],
   weight: ["200", "400"],
   variable: "--font-barlow-condensed",
@@ -35,7 +39,19 @@ export default function RootLayout({
       lang="en"
       className={`${bellefair.variable} ${barlow.variable} ${barlow_condensed.variable}`}
     >
-      <body>{children}</body>
+      <body className="relative max-w-[1440px] mx-auto border grid grid-rows-[min-content,auto] min-h-screen">
+        <Image
+          src={bkgHome}
+          alt="background"
+          className="fixed top-0 -z-10 min-w-max h-auto"
+        />
+        <header className="flex p-8 pr-0 pl-12 items-center">
+          <Image src={logo} alt="logo" />
+          <div className="h-[1px] bg-white opacity-30 w-full ml-8"></div>
+          <Nav />
+        </header>
+        {children}
+      </body>
     </html>
   );
 }
