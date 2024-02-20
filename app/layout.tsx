@@ -1,9 +1,9 @@
 import Image from "next/image";
-import logo from "../public/shared/logo.svg";
+import logo from "../public/assets/shared/logo.svg";
 import type { Metadata } from "next";
 import { Bellefair, Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
-import bkgHome from "../public/home/background-home-desktop.jpg";
+import bkgHome from "../public/assets/home/background-home-desktop.jpg";
 import Nav from "../components/Nav";
 
 const bellefair = Bellefair({
