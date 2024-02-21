@@ -25,7 +25,11 @@ const Li: React.FC<LiProps> = ({ name, setId }) => {
   );
 };
 
-const DestinationNav = ({ setId }) => {
+interface DestinationNavProps {
+  setId: any;
+}
+
+const DestinationNav: React.FC<DestinationNavProps> = ({ setId }) => {
   const destinations = data.destinations;
   return (
     <nav className="font-barlowCondensed tracking-widest ">
