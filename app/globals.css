@@ -22,3 +22,26 @@ h1 {
 .active {
   border-color: white;
 }
+@media (max-width: 768px) {
+  .nav-hide {
+    animation: hide-anim 1s forwards;
+  }
+}
+
+@keyframes hide-anim {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(500px);
+  }
+}
+
+@keyframes show-anim {
+  from {
+    transform: translateX(500px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

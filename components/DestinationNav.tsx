@@ -13,11 +13,16 @@ const Li: React.FC<LiProps> = ({ name, setId }) => {
   return (
     <li
       className={
-        "hover:cursor-pointer border-b-2 border-transparent hover:border-white hover:border-opacity-50 text-text-light-blue text-base"
+        "destination-nav-li hover:cursor-pointer border-b-2 border-opacity-0 border-white hover:border-opacity-50 text-text-light-blue text-base " +
+        name
       }
       onClick={() => {
         setId(destinations.findIndex((item) => item.name === name));
-        console.log(destinations.findIndex((item) => item.name === name));
+        document.querySelectorAll(".destination-nav-li").forEach((item) => {
+          item.classList.add("border-opacity-0");
+        });
+        const clickedLi = document.querySelector<Element>(`.${name}`);
+        if (clickedLi) clickedLi.classList.remove("border-opacity-0");
       }}
     >
       {name}
@@ -33,7 +38,7 @@ const DestinationNav: React.FC<DestinationNavProps> = ({ setId }) => {
   const destinations = data.destinations;
   return (
     <nav className="font-barlowCondensed tracking-widest ">
-      <ul className="uppercase flex gap-12 text-white">
+      <ul className="uppercase flex gap-12 text-white max-md:justify-center">
         {destinations.map((item) => (
           <Li key={item.name} name={item.name} setId={setId} />
         ))}
