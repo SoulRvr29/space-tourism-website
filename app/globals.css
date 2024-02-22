@@ -21,6 +21,7 @@ h1 {
 
 .active {
   border-color: white;
+  opacity: 1;
 }
 @media (max-width: 640px) {
   .nav-hide {
@@ -49,4 +50,9 @@ h1 {
   to {
     transform: translateX(0);
   }
+}
+
+.first {
+  opacity: 1;
+  border-color: white;
 }

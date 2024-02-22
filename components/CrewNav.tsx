@@ -6,41 +6,43 @@ import data from "../app/data.json";
 interface LiProps {
   name: string;
   setId: any;
+  index: number;
 }
 
-const Li: React.FC<LiProps> = ({ name, setId }) => {
-  const destinations = data.destinations;
+const Li: React.FC<LiProps> = ({ index, name, setId }) => {
+  const crew = data.crew;
+  const nameClass = name.replaceAll(" ", "-");
   return (
     <li
       className={
-        "destination-nav-li hover:cursor-pointer border-b-2 border-opacity-0 border-white hover:border-opacity-50 text-text-light-blue text-base " +
-        name
+        "crew-nav-li hover:cursor-pointer hover:opacity-50 h-4 w-4 bg-white rounded-full opacity-25 " +
+        nameClass +
+        (index == 0 ? " first" : "")
       }
       onClick={() => {
-        setId(destinations.findIndex((item) => item.name === name));
-        document.querySelectorAll(".destination-nav-li").forEach((item) => {
-          item.classList.add("border-opacity-0");
+        setId(crew.findIndex((item) => item.name === name));
+        document.querySelectorAll(".crew-nav-li").forEach((item) => {
+          item.classList.add("opacity-25");
+          item.classList.remove("first");
         });
-        const clickedLi = document.querySelector<Element>(`.${name}`);
-        if (clickedLi) clickedLi.classList.remove("border-opacity-0");
+        const clickedLi = document.querySelector<Element>(`.${nameClass}`);
+        if (clickedLi) clickedLi.classList.remove("opacity-25");
       }}
-    >
-      {name}
-    </li>
+    ></li>
   );
 };
 
-interface DestinationNavProps {
+interface CrevNavProps {
   setId: any;
 }
 
-const DestinationNav: React.FC<DestinationNavProps> = ({ setId }) => {
-  const destinations = data.destinations;
+const DestinationNav: React.FC<CrevNavProps> = ({ setId }) => {
+  const crew = data.crew;
   return (
-    <nav className="font-barlowCondensed tracking-widest ">
-      <ul className="uppercase flex gap-12 text-white max-md:justify-center">
-        {destinations.map((item) => (
-          <Li key={item.name} name={item.name} setId={setId} />
+    <nav className="font-barlowCondensed tracking-widest crew-nav">
+      <ul className="uppercase flex gap-4 text-white max-md:justify-center">
+        {crew.map((item, index) => (
+          <Li key={item.name} name={item.name} setId={setId} index={index} />
         ))}
       </ul>
     </nav>
