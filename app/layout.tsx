@@ -1,8 +1,6 @@
 import Image from "next/image";
 import logo from "../public/assets/shared/logo.svg";
-import bkgHomeDesktop from "../public/assets/home/background-home-desktop.jpg";
-import bkgHomeTablet from "../public/assets/home/background-home-tablet.jpg";
-import bkgHomeMobile from "../public/assets/home/background-home-mobile.jpg";
+
 import type { Metadata } from "next";
 import { Bellefair, Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
@@ -17,7 +15,7 @@ const bellefair = Bellefair({
 const barlow = Barlow({
   subsets: ["latin"],
   weight: ["200", "400"],
-  variable: "--font-barlow-condensed",
+  variable: "--font-barlow",
 });
 
 const barlow_condensed = Barlow_Condensed({
@@ -42,28 +40,9 @@ export default function RootLayout({
       className={`${bellefair.variable} ${barlow.variable} ${barlow_condensed.variable}`}
     >
       <body className="relative max-w-[1440px] mx-auto grid grid-rows-[min-content,auto] min-h-screen ">
-        <div className="w-screen h-screen fixed">
-          <Image
-            src={bkgHomeDesktop}
-            alt="background"
-            className="fixed top-0 justify-self-center z-0 min-w-[1440px] max-md:hidden"
-          />
-
-          <Image
-            src={bkgHomeTablet}
-            alt="background"
-            className="fixed top-0 z-0 min-w-max h-auto hidden max-md:block max-sm:hidden"
-          />
-
-          <Image
-            src={bkgHomeMobile}
-            alt="background"
-            className="fixed top-0 z-0 min-w-max h-auto hidden max-sm:block"
-          />
-        </div>
         <header className="flex p-8 pr-0 pl-12 items-center z-20 relative">
           <Image src={logo} alt="logo" />
-          <div className="h-[1px] bg-white opacity-30 w-full ml-8"></div>
+          <div className="h-[1px] bg-white opacity-30 w-full ml-8 max-sm:hidden"></div>
           <Nav />
         </header>
         <div className="z-10 grid">{children}</div>

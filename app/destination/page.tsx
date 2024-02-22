@@ -1,10 +1,13 @@
 "use client";
-import dgd from "/assets/destination/image-moon.png";
+
 import React from "react";
 import DestinationNav from "../../components/DestinationNav";
 import Image from "next/image";
 import { useState } from "react";
 import data from "../../app/data.json";
+import bkgDestinationDesktop from "../../public/assets/destination/background-destination-desktop.jpg";
+import bkgDestinationTablet from "../../public/assets/destination/background-destination-tablet.jpg";
+import bkgDestinationMobile from "../../public/assets/destination/background-destination-mobile.jpg";
 
 export default function Destination() {
   const destinations = data.destinations;
@@ -12,11 +15,30 @@ export default function Destination() {
 
   return (
     <div className="flex flex-col mt-10 px-10">
-      <h1 className="mb-4 font-barlowCondensed tracking-widest">
-        <span className="font-bold opacity-30 mr-8">01</span>pick your
-        destination
+      <div className="w-screen h-screen fixed top-0 left-0 -z-10 grid">
+        <Image
+          src={bkgDestinationDesktop}
+          alt="background"
+          className="fixed top-0 justify-self-center z-0 min-w-[1440px] max-md:hidden "
+        />
+
+        <Image
+          src={bkgDestinationTablet}
+          alt="background"
+          className="fixed top-0 z-0 justify-self-center min-w-[768px] hidden max-md:block max-[375px]:hidden"
+        />
+
+        <Image
+          src={bkgDestinationMobile}
+          alt="background"
+          className="fixed top-0 z-0 justify-self-center min-w-[375px] hidden max-[375px]:block"
+        />
+      </div>
+      <h1 className="mb-4 font-barlowCondensed tracking-widest max-md:text-xl max-[375px]:text-base">
+        <span className="font-bold opacity-30 mr-8">01</span>
+        pick your destination
       </h1>
-      <div className="flex gap-32 justify-center max-md:flex-col max-md:items-center">
+      <div className="grid grid-cols-2 gap-[clamp(10px,8vw,130px)] justify-center max-md:grid-cols-1 max-md:self-center">
         <section className="max-w-md">
           <Image
             src={destinations[id].images.png}
@@ -27,10 +49,10 @@ export default function Destination() {
         </section>
         <section className="max-w-md max-md:text-center">
           <DestinationNav setId={setId} />
-          <h2 className="text-[100px] font-bellefair uppercase">
+          <h2 className="text-[100px] max-md:text-7xl max-[375px]:text-6xl font-bellefair uppercase max-md:my-6">
             {destinations[id].name}
           </h2>
-          <p className="border-b border-white border-opacity-25 pb-8 mb-8">
+          <p className="border-b border-white border-opacity-25 pb-8 mb-8 max-md:text-base">
             {destinations[id].description}
           </p>
           <div className="flex gap-14 max-md:justify-center">

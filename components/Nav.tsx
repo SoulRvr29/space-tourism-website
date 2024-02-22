@@ -9,12 +9,13 @@ interface LiProps {
   id: string;
   name: string;
   link: string;
+  setMenuOpen: any;
 }
 
-const Li: React.FC<LiProps> = ({ id, name, link }) => {
+const Li: React.FC<LiProps> = ({ id, name, link, setMenuOpen }) => {
   const pathname = usePathname();
   return (
-    <Link href={link}>
+    <Link href={link} onClick={() => setMenuOpen(false)}>
       <li
         className={
           "hover:cursor-pointer border-b-[3px] max-sm:border-b-0 max-sm:border-r-[3px] border-transparent py-8 max-sm:py-0 hover:border-white hover:border-opacity-50 max-md:text-sm" +
@@ -31,13 +32,13 @@ const Li: React.FC<LiProps> = ({ id, name, link }) => {
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav className="font-barlowCondensed tracking-widest ">
+    <nav className="font-barlowCondensed tracking-widest">
       {menuOpen ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="21"
-          className="absolute top-0 right-0 mt-8 mr-6 hidden max-sm:block z-40"
+          className="absolute top-0 right-0 mt-8 mr-6 hidden max-sm:block z-40 max-sm:mt-11"
           onClick={() => setMenuOpen(false)}
         >
           <g fill="#D0D6F9" fillRule="evenodd">
@@ -50,7 +51,7 @@ export default function Nav() {
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="21"
-          className="absolute top-0 right-0 mt-8 mr-6 hidden max-sm:block z-40"
+          className="absolute top-0 right-0 mt-8 mr-6 hidden max-sm:block z-40 max-sm:mt-11"
           onClick={() => setMenuOpen(true)}
         >
           <g fill="#D0D6F9" fillRule="evenodd">
@@ -59,11 +60,26 @@ export default function Nav() {
         </svg>
       )}
 
-      <ul className="uppercase flex max-sm:flex-col gap-12 max-md:gap-8 max-sm:gap-8 text-white text-base px-[clamp(20px,7vw,100px)] w-full h-full max-sm:fixed max-sm:top-0 max-sm:right-0 max-md:-30 max-sm:w-[70vw] max-sm:h-screen max-sm:py-20 bg-white bg-opacity-10 backdrop-blur-md nav-hide">
-        <Li id="00" name="home" link="/" />
-        <Li id="01" name="destination" link="/destination" />
-        <Li id="02" name="crew" link="/crew" />
-        <Li id="03" name="technology" link="/technology" />
+      <ul
+        className={
+          "uppercase flex max-sm:flex-col gap-12 max-md:gap-8 max-sm:gap-8 text-white text-base px-[clamp(20px,7vw,100px)] w-full h-full max-sm:fixed max-sm:top-0 max-sm:right-0 max-md:-30 max-sm:w-[70vw] max-sm:h-screen max-sm:py-20 bg-white bg-opacity-10 backdrop-blur-md " +
+          (menuOpen ? "nav-show" : "nav-hide")
+        }
+      >
+        <Li id="00" name="home" link="/" setMenuOpen={setMenuOpen} />
+        <Li
+          id="01"
+          name="destination"
+          link="/destination"
+          setMenuOpen={setMenuOpen}
+        />
+        <Li id="02" name="crew" link="/crew" setMenuOpen={setMenuOpen} />
+        <Li
+          id="03"
+          name="technology"
+          link="/technology"
+          setMenuOpen={setMenuOpen}
+        />
       </ul>
     </nav>
   );

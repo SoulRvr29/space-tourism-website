@@ -22,9 +22,14 @@ h1 {
 .active {
   border-color: white;
 }
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .nav-hide {
     animation: hide-anim 1s forwards;
+  }
+}
+@media (max-width: 640px) {
+  .nav-show {
+    animation: show-anim 1s forwards;
   }
 }
 
