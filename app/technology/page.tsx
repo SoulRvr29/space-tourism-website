@@ -19,12 +19,12 @@ export default function Destination() {
         <SectionHeader number="03" title="space launch 101" />
       </div>
       <div className="grid grid-cols-2 justify-center max-lg:grid-cols-1 max-lg:self-center mt-0">
-        <section className="relative flex max-lg:flex-col gap-10 items-center max-w-md max-lg:text-center max-[375px]:order-2 mt-20 max-lg:mx-auto">
+        <section className="relative flex max-lg:flex-col gap-10 items-center max-w-md max-lg:text-center max-[375px]:order-2 mt-20 max-sm:mt-10 max-lg:mx-auto">
           <div className="max-[375px]:-order-3 max-[375px]:mb-0">
             <TechnologyNav setId={setId} />
           </div>
           <div>
-            <h2 className="text-[100px] max-lg:text-7xl max-[375px]:text-6xl font-bellefair uppercase max-lg:my-6 max-[375px]:mb-2  grid ">
+            <h2 className="text-[100px] max-lg:text-7xl max-[375px]:text-6xl font-bellefair uppercase max-lg:my-6 max-[375px]:mt-0 max-[375px]:mb-2  grid ">
               <span className="text-base text-text-light-blue font-barlowCondensed tracking-widest max-[375px]:text-sm">
                 the terminology...
               </span>
@@ -46,7 +46,7 @@ export default function Destination() {
               alt={technology[id].name}
             ></Image>
           </div>
-          <div className="hidden max-lg:block">
+          <div className="hidden max-lg:block ">
             <Image
               src={technology[id].images.landscape}
               width={768}

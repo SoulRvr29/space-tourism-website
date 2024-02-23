@@ -26,7 +26,7 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({ section }) => {
       <Image
         src={`/assets/${section}/background-${section}-mobile.jpg`}
         alt="background"
-        className="fixed top-0 z-0 justify-self-center min-w-[375px] hidden max-[375px]:block"
+        className="fixed bottom-0 z-0 justify-self-center min-w-[375px] hidden max-[375px]:block"
         width={375}
         height={667}
       />

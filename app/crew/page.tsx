@@ -22,7 +22,7 @@ export default function Destination() {
             <span className="text-3xl opacity-50 max-md:text-2xl max-[375px]:text-base">
               {crew[id].role}
             </span>
-            <span className="text-5xl mt-2 mb-6 max-md:text-4xl max-[375px]:text-[24px]">
+            <span className="text-5xl mt-2 mb-6 max-sm:mb-0 max-md:text-4xl max-[375px]:text-[24px]">
               {crew[id].name}
             </span>
           </h2>

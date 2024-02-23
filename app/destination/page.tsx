@@ -33,7 +33,7 @@ export default function Destination() {
           <p className="border-b border-white border-opacity-25 pb-8 mb-8 max-md:text-base">
             {destinations[id].description}
           </p>
-          <div className="flex gap-14 max-md:justify-center">
+          <div className="flex gap-14 max-md:justify-center max-[400px]:flex-col max-[400px]:gap-6">
             <div>
               <h3 className="uppercase text-[14px] text-text-light-blue font-barlow">
                 avg.distance

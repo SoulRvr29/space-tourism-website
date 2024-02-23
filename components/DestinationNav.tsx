@@ -41,7 +41,7 @@ const DestinationNav: React.FC<DestinationNavProps> = ({ setId }) => {
   const destinations = data.destinations;
   return (
     <nav className="font-barlowCondensed tracking-widest ">
-      <ul className="uppercase flex gap-12 text-white max-md:justify-center">
+      <ul className="uppercase flex gap-12 max-sm:gap-1 max-sm:justify-between text-white max-md:justify-center">
         {destinations.map((item, index) => (
           <Li key={item.name} name={item.name} setId={setId} index={index} />
         ))}
