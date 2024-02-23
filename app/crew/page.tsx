@@ -36,8 +36,8 @@ export default function Destination() {
         <section className="max-w-sm max-md:px-10 max-md:mt-10 max-[375px]:border-b max-[375px]:border-white max-[375px]:border-opacity-10 max-[375px]:mb-6 max-md:static absolute bottom-0 right-20 max-lg:right-0 ">
           <Image
             src={crew[id].images.png}
-            width={445}
-            height={445}
+            width={700}
+            height={700}
             alt={crew[id].name}
           ></Image>
         </section>

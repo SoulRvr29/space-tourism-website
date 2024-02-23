@@ -57,6 +57,11 @@ h1 {
   border-color: white;
 }
 
+.first-tech-nav {
+  background-color: white;
+  color: black;
+}
+
 section,
 main {
   animation: fade-in 1s forwards;
