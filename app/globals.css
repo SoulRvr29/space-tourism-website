@@ -56,3 +56,17 @@ h1 {
   opacity: 1;
   border-color: white;
 }
+
+section,
+main {
+  animation: fade-in 1s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

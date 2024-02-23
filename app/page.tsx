@@ -1,30 +1,11 @@
 import Link from "next/link";
-import Image from "next/image";
-import bkgHomeDesktop from "../public/assets/home/background-home-desktop.jpg";
-import bkgHomeTablet from "../public/assets/home/background-home-tablet.jpg";
-import bkgHomeMobile from "../public/assets/home/background-home-mobile.jpg";
+import BackgroundImage from "../components/BackgroundImage";
+
 export default function Home() {
   return (
     <div className="relative justify-center flex flex-col gap-52">
-      <div className="w-screen h-screen fixed top-0 left-0 -z-10 grid">
-        <Image
-          src={bkgHomeDesktop}
-          alt="background"
-          className="fixed top-0 justify-self-center z-0 min-w-[1440px] max-md:hidden "
-        />
+      <BackgroundImage section="home" />
 
-        <Image
-          src={bkgHomeTablet}
-          alt="background"
-          className="fixed top-0 z-0 justify-self-center min-w-[768px] hidden max-md:block max-[375px]:hidden"
-        />
-
-        <Image
-          src={bkgHomeMobile}
-          alt="background"
-          className="fixed top-0 z-0 justify-self-center min-w-[375px] hidden max-[375px]:block"
-        />
-      </div>
       <main className="flex justify-evenly items-end px-20 max-md:px-6 gap-10 max-md:flex-col max-md:items-center">
         <div className="flex flex-col max-w-md max-md:text-center">
           <h1 className="uppercase text-[28px] max-md:text-[20px] max-[375px]:text-[16px] font-thin font-barlow text-text-light-blue tracking-widest">
