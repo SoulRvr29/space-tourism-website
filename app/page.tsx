@@ -3,18 +3,18 @@ import BackgroundImage from "../components/BackgroundImage";
 
 export default function Home() {
   return (
-    <div className="relative justify-center flex flex-col gap-52">
+    <div className="relative justify-center max-[375px]:justify-start flex flex-col gap-52">
       <BackgroundImage section="home" />
 
       <main className="flex justify-evenly items-end px-20 max-md:px-6 gap-10 max-md:flex-col max-md:items-center">
         <div className="flex flex-col max-w-md max-md:text-center">
-          <h1 className="uppercase text-[28px] max-md:text-[20px] max-[375px]:text-[16px] font-thin font-barlow text-text-light-blue tracking-widest">
+          <h1 className="uppercase text-[28px] max-md:text-[20px] max-[375px]:text-[16px] font-thin font-barlowCondensed text-text-light-blue tracking-[4px]">
             so, you want to travel to
           </h1>
           <span className="font-bellefair uppercase text-[clamp(100px,15vw,150px)] max-[375px]:text-[80px] text-white">
             space
           </span>
-          <p className="max-[375px]:text-[15px]">
+          <p className="max-[375px]:text-[15px]  text-text-light-blue">
             Let&apos;s face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
             Well sit back, and relax because we&apos;ll give you a truly out of

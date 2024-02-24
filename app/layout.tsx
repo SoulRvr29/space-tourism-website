@@ -4,7 +4,7 @@ import logo from "../public/assets/shared/logo.svg";
 import type { Metadata } from "next";
 import { Bellefair, Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
-import Nav from "../components/Nav";
+import Nav from "../components/MainNav";
 
 const bellefair = Bellefair({
   subsets: ["latin"],

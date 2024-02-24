@@ -14,7 +14,7 @@ const Li: React.FC<LiProps> = ({ index, name, setId }) => {
   return (
     <li
       className={
-        "destination-nav-li hover:cursor-pointer border-b-2 border-opacity-0 border-white hover:border-opacity-50 text-text-light-blue text-base " +
+        "destination-nav-li hover:cursor-pointer border-b-2 leading-[2] border-opacity-0 border-white hover:border-opacity-50 text-text-light-blue text-base " +
         name +
         (index == 0 ? " first" : "")
       }

@@ -18,7 +18,7 @@ const Li: React.FC<LiProps> = ({ id, name, link, setMenuOpen }) => {
     <Link href={link} onClick={() => setMenuOpen(false)}>
       <li
         className={
-          "hover:cursor-pointer border-b-[3px] max-sm:border-b-0 max-sm:border-r-[3px] border-transparent py-8 max-sm:py-0 hover:border-white hover:border-opacity-50 max-md:text-sm" +
+          "hover:cursor-pointer border-b-[3px] max-sm:border-b-0 max-sm:border-r-[3px] border-transparent py-8 max-sm:py-0 hover:border-white hover:border-opacity-50 max-md:text-sm hover:animate-pulse " +
           (pathname === link ? " active" : "")
         }
       >

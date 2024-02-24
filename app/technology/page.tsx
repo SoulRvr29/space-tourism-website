@@ -13,7 +13,7 @@ export default function Destination() {
   const [id, setId] = useState(0);
 
   return (
-    <div className="flex flex-col mt-10 px-[clamp(20px,5vw,100px)] max-lg:px-0">
+    <div className="flex flex-col max-[375px]:mt-0 mt-10 px-[clamp(20px,5vw,80px)] max-lg:px-0">
       <BackgroundImage section="technology" />
       <div className="max-lg:ml-10 max-lg:mb-6 max-[375px]:mx-auto max-[375px]:mb-0">
         <SectionHeader number="03" title="space launch 101" />
