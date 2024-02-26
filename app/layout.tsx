@@ -1,10 +1,8 @@
-import Image from "next/image";
-import logo from "../public/assets/shared/logo.svg";
-
 import type { Metadata } from "next";
 import { Bellefair, Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import Nav from "../components/MainNav";
+import Logo from "@/components/Logo";
 
 const bellefair = Bellefair({
   subsets: ["latin"],
@@ -41,7 +39,7 @@ export default function RootLayout({
     >
       <body className="relative max-w-[1440px] mx-auto grid grid-rows-[min-content,auto] min-h-screen ">
         <header className="flex p-8 pr-0 pl-12 items-center z-20 relative">
-          <Image src={logo} alt="logo" />
+          <Logo />
           <div className="h-[1px] bg-white opacity-30 w-full ml-8 max-sm:hidden"></div>
           <Nav />
         </header>

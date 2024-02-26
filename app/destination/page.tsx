@@ -7,6 +7,7 @@ import { useState } from "react";
 import data from "../../app/data.json";
 import BackgroundImage from "@/components/BackgroundImage";
 import SectionHeader from "@/components/SectionHeader";
+import { motion } from "framer-motion";
 
 export default function Destination() {
   const destinations = data.destinations;
@@ -17,16 +18,23 @@ export default function Destination() {
       <BackgroundImage section="destination" />
       <SectionHeader number="01" title="pick your destination" />
       <div className="grid grid-cols-2 gap-[clamp(10px,8vw,130px)] justify-center max-md:grid-cols-1 max-md:self-center mt-10 max-sm:mt-0">
-        <section className="max-w-md max-md:w-3/4 max-md:h-3/4 max-[375px]:w-[180px] max-[375px]:h-[180px] max-md:mx-auto">
+        <motion.section
+          key={id}
+          className="max-w-md max-md:w-3/4 max-md:h-3/4 max-[375px]:w-[180px] max-[375px]:h-[180px] max-md:mx-auto"
+          initial={{ scale: 0, opacity: 1, rotate: 30 }}
+          animate={{ scale: 1, opacity: 1, rotate: 0 }}
+          transition={{ duration: 0.75 }}
+        >
           <Image
             src={destinations[id].images.png}
             width={445}
             height={445}
             alt={destinations[id].name}
           ></Image>
-        </section>
+        </motion.section>
         <section className="max-w-md max-md:text-center">
           <DestinationNav setId={setId} />
+
           <h2 className="text-[100px] max-md:text-7xl max-[375px]:text-6xl font-bellefair uppercase max-md:my-6">
             {destinations[id].name}
           </h2>

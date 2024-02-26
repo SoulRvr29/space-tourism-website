@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 interface LiProps {
   id: string;
@@ -16,15 +17,20 @@ const Li: React.FC<LiProps> = ({ id, name, link, setMenuOpen }) => {
   const pathname = usePathname();
   return (
     <Link href={link} onClick={() => setMenuOpen(false)}>
-      <li
+      <motion.li
+        transition={{ duration: 0.2 }}
+        whileHover={{
+          textShadow: "0 0 10px rgba(200,200,200,1)",
+          color: "rgb(255,255,220)",
+        }}
         className={
-          "hover:cursor-pointer border-b-[3px] max-sm:border-b-0 max-sm:border-r-[3px] border-transparent py-8 max-sm:py-0 hover:border-white hover:border-opacity-50 max-md:text-sm hover:animate-pulse " +
+          "hover:cursor-pointer border-b-[3px] max-sm:border-b-0 max-sm:border-r-[3px] border-transparent py-8 max-sm:py-0 hover:border-white hover:border-opacity-50 max-md:text-sm " +
           (pathname === link ? " active" : "")
         }
       >
         <span className="font-bold mr-2 max-md:hidden max-sm:inline">{id}</span>
         {name}
-      </li>
+      </motion.li>
     </Link>
   );
 };
@@ -32,7 +38,12 @@ const Li: React.FC<LiProps> = ({ id, name, link, setMenuOpen }) => {
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav className="font-barlowCondensed tracking-widest">
+    <motion.nav
+      className="font-barlowCondensed tracking-widest"
+      initial={{ scaleY: 0.01 }}
+      animate={{ scaleY: 1 }}
+      // transition={{ duration: 0.25 }}
+    >
       {menuOpen ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -81,6 +92,6 @@ export default function Nav() {
           setMenuOpen={setMenuOpen}
         />
       </ul>
-    </nav>
+    </motion.nav>
   );
 }
