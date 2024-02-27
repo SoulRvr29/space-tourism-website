@@ -48,8 +48,8 @@ const TechnologyNav: React.FC<TechnologyNavProps> = ({ setId }) => {
     <nav className="font-barlowCondensed tracking-widest technology-nav">
       <ul className="uppercase flex flex-col gap-8 text-white max-lg:flex-row">
         {technology.map((item, index) => (
-          <li>
-            <Li key={item.name} name={item.name} setId={setId} index={index} />
+          <li key={item.name}>
+            <Li name={item.name} setId={setId} index={index} />
           </li>
         ))}
       </ul>
