@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/space-tourism-website-pYmMoNWJDC](https://www.frontendmentor.io/solutions/space-tourism-website-pYmMoNWJDC)
 - Live Site URL: [https://space-tourism-website-one-tau.vercel.app/](https://space-tourism-website-one-tau.vercel.app/)
 
 ### Built with
