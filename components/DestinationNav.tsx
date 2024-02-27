@@ -12,7 +12,7 @@ interface LiProps {
 const Li: React.FC<LiProps> = ({ index, name, setId }) => {
   const destinations = data.destinations;
   return (
-    <li
+    <div
       className={
         "destination-nav-li hover:cursor-pointer border-b-2 leading-[2] border-opacity-0 border-white hover:border-opacity-50 text-text-light-blue text-base " +
         name +
@@ -29,7 +29,7 @@ const Li: React.FC<LiProps> = ({ index, name, setId }) => {
       }}
     >
       {name}
-    </li>
+    </div>
   );
 };
 
@@ -43,7 +43,9 @@ const DestinationNav: React.FC<DestinationNavProps> = ({ setId }) => {
     <nav className="font-barlowCondensed tracking-widest ">
       <ul className="uppercase flex gap-12 max-sm:gap-1 max-sm:justify-between text-white max-md:justify-center">
         {destinations.map((item, index) => (
-          <Li key={item.name} name={item.name} setId={setId} index={index} />
+          <li>
+            <Li key={item.name} name={item.name} setId={setId} index={index} />
+          </li>
         ))}
       </ul>
     </nav>

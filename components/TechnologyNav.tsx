@@ -13,7 +13,7 @@ const Li: React.FC<LiProps> = ({ index, name, setId }) => {
   const technology = data.technology;
   const nameClass = name.replaceAll(" ", "-");
   return (
-    <li
+    <div
       className={
         "technology-nav-li hover:cursor-pointer hover:opacity-75 border w-20 max-md:w-14 max-md:h-14 h-20 rounded-full grid place-content-center text-3xl max-md:text-2xl max-[375px]:w-10 max-[375px]:h-10 max-[375px]:text-sm font-bellefair " +
         nameClass +
@@ -34,7 +34,7 @@ const Li: React.FC<LiProps> = ({ index, name, setId }) => {
       }}
     >
       {index + 1}
-    </li>
+    </div>
   );
 };
 
@@ -48,7 +48,9 @@ const TechnologyNav: React.FC<TechnologyNavProps> = ({ setId }) => {
     <nav className="font-barlowCondensed tracking-widest technology-nav">
       <ul className="uppercase flex flex-col gap-8 text-white max-lg:flex-row">
         {technology.map((item, index) => (
-          <Li key={item.name} name={item.name} setId={setId} index={index} />
+          <li>
+            <Li key={item.name} name={item.name} setId={setId} index={index} />
+          </li>
         ))}
       </ul>
     </nav>

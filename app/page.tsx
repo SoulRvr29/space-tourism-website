@@ -58,13 +58,13 @@ export default function Home() {
           animate="animate"
         >
           <Link href="/destination" className="">
-            <motion.button
-              className="fflex items-center font-bellefair text-black text-[32px] max-[375px]:text-[20px] uppercase bg-white p-16 max-md:p-12 max-[375px]:p-8 rounded-full h-min aspect-square transition-all ease-in-out duration-700 shadow-[0_0_0_0_rgba(255,255,255,0)] hover:shadow-[0_0_0_50px_rgba(255,255,255,0.1)]"
+            <motion.div
+              className="flex items-center font-bellefair text-black text-[32px] max-[375px]:text-[20px] uppercase bg-white p-16 max-md:p-12 max-[375px]:p-8 rounded-full h-min aspect-square transition-all ease-in-out duration-700 shadow-[0_0_0_0_rgba(255,255,255,0)] hover:shadow-[0_0_0_50px_rgba(255,255,255,0.1)]"
               variants={exploreBtnVariant}
               whileHover="hover"
             >
               explore
-            </motion.button>
+            </motion.div>
           </Link>
         </motion.div>
       </main>

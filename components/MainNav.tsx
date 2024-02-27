@@ -17,7 +17,7 @@ const Li: React.FC<LiProps> = ({ id, name, link, setMenuOpen }) => {
   const pathname = usePathname();
   return (
     <Link href={link} onClick={() => setMenuOpen(false)}>
-      <motion.li
+      <motion.div
         transition={{ duration: 0.2 }}
         whileHover={{
           textShadow: "0 0 10px rgba(200,200,200,1)",
@@ -30,7 +30,7 @@ const Li: React.FC<LiProps> = ({ id, name, link, setMenuOpen }) => {
       >
         <span className="font-bold mr-2 max-md:hidden max-sm:inline">{id}</span>
         {name}
-      </motion.li>
+      </motion.div>
     </Link>
   );
 };
@@ -77,20 +77,28 @@ export default function Nav() {
           (menuOpen ? "nav-show" : "nav-hide")
         }
       >
-        <Li id="00" name="home" link="/" setMenuOpen={setMenuOpen} />
-        <Li
-          id="01"
-          name="destination"
-          link="/destination"
-          setMenuOpen={setMenuOpen}
-        />
-        <Li id="02" name="crew" link="/crew" setMenuOpen={setMenuOpen} />
-        <Li
-          id="03"
-          name="technology"
-          link="/technology"
-          setMenuOpen={setMenuOpen}
-        />
+        <li>
+          <Li id="00" name="home" link="/" setMenuOpen={setMenuOpen} />
+        </li>
+        <li>
+          <Li
+            id="01"
+            name="destination"
+            link="/destination"
+            setMenuOpen={setMenuOpen}
+          />
+        </li>
+        <li>
+          <Li id="02" name="crew" link="/crew" setMenuOpen={setMenuOpen} />
+        </li>
+        <li>
+          <Li
+            id="03"
+            name="technology"
+            link="/technology"
+            setMenuOpen={setMenuOpen}
+          />
+        </li>
       </ul>
     </motion.nav>
   );
