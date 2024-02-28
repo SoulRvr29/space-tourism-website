@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative justify-center max-[375px]:justify-start flex flex-col gap-52">
+    <div className="relative justify-center max-[375px]:justify-start flex flex-col gap-52 mb-10">
       <BackgroundImage section="home" />
 
       <main className="flex justify-evenly items-end px-20 max-md:px-6 gap-10 max-md:flex-col max-md:items-center">

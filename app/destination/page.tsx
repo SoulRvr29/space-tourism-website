@@ -14,7 +14,7 @@ export default function Destination() {
   const [id, setId] = useState(0);
 
   return (
-    <div className="flex flex-col mt-10 px-10 max-[375px]:mt-0">
+    <div className="flex flex-col mt-10 px-10 max-[375px]:mt-0 mb-16">
       <BackgroundImage section="destination" />
       <SectionHeader number="01" title="pick your destination" />
       <div className="grid grid-cols-2 gap-[clamp(10px,8vw,130px)] justify-center max-md:grid-cols-1 max-md:self-center mt-10 max-sm:mt-0">
