@@ -3,6 +3,7 @@ import { Bellefair, Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import Nav from "../components/MainNav";
 import Logo from "@/components/Logo";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const bellefair = Bellefair({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({
           <Nav />
         </header>
         <div className="z-10 grid">{children}</div>
+        <SpeedInsights />
       </body>
     </html>
   );
